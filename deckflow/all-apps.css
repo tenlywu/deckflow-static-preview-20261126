@@ -1,0 +1,451 @@
+
+      .library-hero {
+        padding-block: 3.5rem 2.5rem;
+      }
+
+      .library-hero h1 {
+        max-width: 31rem;
+        font-family: var(--font-heading);
+        font-size: clamp(2rem, 1.62rem + 1.45vw, 3rem);
+        font-weight: 500;
+        line-height: 1.05;
+        text-wrap: balance;
+      }
+
+      .library-search-trigger {
+        position: absolute;
+        inset-block-start: 0.85rem;
+        inset-inline-end: var(--section-gutter);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        width: 12rem;
+        min-height: 2rem;
+        padding: 0.25rem 0.625rem;
+        border: 1px solid var(--input);
+        border-radius: var(--radius-md);
+        color: var(--foreground-light);
+        font-size: 0.875rem;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .library-search-trigger kbd {
+        padding: 0 0.35rem;
+        border: 1px solid var(--border);
+        border-radius: 0.25rem;
+        font-size: 0.625rem;
+      }
+
+      .library-catalog {
+        padding-bottom: clamp(4rem, 7vw, 6rem);
+      }
+
+      .library-category {
+        margin-bottom: 3rem;
+        padding-bottom: 3rem;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .library-category > span {
+        color: var(--foreground-lighter);
+        font-size: 0.75rem;
+        font-weight: 500;
+      }
+
+      .library-filters {
+        display: grid;
+        width: min(100%, 32rem);
+        gap: 0.25rem 1rem;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        margin-top: 0.55rem;
+      }
+
+      .library-filters button {
+        min-height: 1.75rem;
+        color: var(--foreground-light);
+        font-size: 0.875rem;
+        text-align: left;
+        cursor: pointer;
+      }
+
+      .library-filters button:is(:hover, [aria-pressed="true"]) {
+        color: var(--foreground);
+      }
+
+      .library-group:not([hidden]) ~ .library-group:not([hidden]) {
+        margin-top: 3rem;
+      }
+
+      .library-group h2 {
+        font-family: var(--font-body);
+        font-size: 1.05rem;
+        font-weight: 500;
+      }
+
+      .library-group header p,
+      .library-end > p {
+        margin-top: 0.175rem;
+        color: var(--foreground-lighter);
+      }
+
+      .library-grid {
+        display: grid;
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .library-card {
+        min-width: 0;
+        border-radius: 0.4rem;
+      }
+
+      .library-card:focus-visible {
+        outline: 2px solid var(--ring);
+        outline-offset: 4px;
+      }
+
+      .library-card-copy {
+        display: grid;
+        gap: 0.45rem;
+        margin-top: 0.9rem;
+        padding: 0 0.25rem 0.45rem;
+      }
+
+      .library-card-title {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        gap: 0.5rem;
+      }
+
+      :is(.library-card, .library-tool-card) h3,
+      .library-card-copy > p {
+        font-family: var(--font-body);
+        font-size: 0.875rem;
+        line-height: 1.42;
+      }
+
+      :is(.library-card, .library-tool-card) h3 {
+        font-weight: 500;
+      }
+
+      .library-card-copy > p {
+        color: var(--foreground-lighter);
+      }
+
+      .library-tool-card {
+        min-width: 0;
+        padding: 1rem;
+      }
+
+      .library-tool-card:hover {
+        border-color: var(--foreground-lighter);
+      }
+
+      .library-tool-card .library-card-copy {
+        margin-top: 0;
+        padding: 0;
+      }
+
+      .library-card-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.2rem;
+        flex: none;
+        border-radius: 0.25rem;
+        background: transparent;
+        font-size: 0.625rem;
+        line-height: 0.75rem;
+      }
+
+      .library-card-badge svg {
+        width: 0.65rem;
+        height: 0.65rem;
+      }
+
+      .library-preview {
+        aspect-ratio: 4 / 3;
+        overflow: hidden;
+        border-radius: 0.4rem;
+        background-image: radial-gradient(var(--border) 1px, transparent 1px);
+        background-size: 1.25rem 1.25rem;
+      }
+
+      .library-preview-content {
+        width: 100%;
+        height: 100%;
+        filter: grayscale(1);
+        transition: filter 0.2s;
+        user-select: none;
+      }
+
+      .library-card:is(:hover, :focus-visible) .library-preview {
+        border-color: var(--foreground-muted);
+      }
+
+      .library-card:is(:hover, :focus-visible) .library-preview-content {
+        filter: none;
+      }
+
+      /* Preview-only utilities for the original catalog illustrations. */
+      .library-preview .preview-fade {
+        mask-image: linear-gradient(black calc(100% - 1.25rem), transparent);
+      }
+
+      .library-preview .preview-accent {
+        background: var(--primary);
+      }
+      .library-preview .preview-accent-10 {
+        background: color-mix(in srgb, var(--primary) 10%, transparent);
+      }
+      .library-preview .preview-accent-20 {
+        background: color-mix(in srgb, var(--primary) 20%, transparent);
+      }
+      .library-preview .preview-accent-30 {
+        background: color-mix(in srgb, var(--primary) 30%, transparent);
+      }
+      .library-preview .preview-border-accent-20 {
+        border-color: color-mix(in srgb, var(--primary) 20%, transparent);
+      }
+      .library-preview .preview-border-accent-30 {
+        border-color: color-mix(in srgb, var(--primary) 30%, transparent);
+      }
+      .library-preview .bg-surface-300 {
+        background: var(--background-selection, var(--secondary));
+      }
+      .library-preview .border-2 {
+        border-width: 2px;
+      }
+      .library-preview .border-background {
+        border-color: var(--background);
+      }
+      .library-preview .border-dashed {
+        border-style: dashed;
+      }
+      .library-preview .bottom-7 {
+        bottom: 1.75rem;
+      }
+      .library-preview .fill-current {
+        fill: currentColor;
+      }
+      .library-preview .grid-cols-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+      .library-preview .h-1\/2 {
+        height: 50%;
+      }
+      .library-preview .h-2\/5 {
+        height: 40%;
+      }
+      .library-preview .h-3\/5 {
+        height: 60%;
+      }
+      .library-preview .h-4\/5 {
+        height: 80%;
+      }
+      .library-preview .h-12 {
+        height: 3rem;
+      }
+      .library-preview .h-36 {
+        height: 9rem;
+      }
+      .library-preview .inset-x-5 {
+        inset-inline: 1.25rem;
+      }
+      .library-preview .justify-around {
+        justify-content: space-around;
+      }
+      .library-preview .leading-5 {
+        line-height: 1.25rem;
+      }
+      .library-preview .left-10 {
+        left: 2.5rem;
+      }
+      .library-preview .preview-wide {
+        max-width: 13.125rem;
+      }
+      .library-preview .max-w-xs {
+        max-width: 20rem;
+      }
+      .library-preview .min-h-28 {
+        min-height: 7rem;
+      }
+      .library-preview .ml-4 {
+        margin-left: 1rem;
+      }
+      .library-preview .ml-8 {
+        margin-left: 2rem;
+      }
+      .library-preview .pb-1\.5 {
+        padding-bottom: 0.375rem;
+      }
+      .library-preview .pl-3 {
+        padding-left: 0.75rem;
+      }
+      .library-preview .pt-2 {
+        padding-top: 0.5rem;
+      }
+      .library-preview .py-1 {
+        padding-block: 0.25rem;
+      }
+      .library-preview .right-6 {
+        right: 1.5rem;
+      }
+      .library-preview .rounded-t {
+        border-radius: 0.25rem 0.25rem 0 0;
+      }
+      .library-preview .size-1\.5 {
+        width: 0.375rem;
+        height: 0.375rem;
+      }
+      .library-preview .size-3 {
+        width: 0.75rem;
+        height: 0.75rem;
+      }
+      .library-preview .size-3\.5 {
+        width: 0.875rem;
+        height: 0.875rem;
+      }
+      .library-preview .size-10 {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+      .library-preview .preview-small-text {
+        font-size: 0.625rem;
+      }
+      .library-preview .top-5 {
+        top: 1.25rem;
+      }
+      .library-preview .top-10 {
+        top: 2.5rem;
+      }
+      .library-preview .top-14 {
+        top: 3.5rem;
+      }
+      .library-preview .w-2\/3 {
+        width: 66.667%;
+      }
+      .library-preview .w-2\/5 {
+        width: 40%;
+      }
+      .library-preview .w-3\/5 {
+        width: 60%;
+      }
+      .library-preview .w-px {
+        width: 1px;
+      }
+
+      .library-end {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1.25rem;
+        margin-top: 3rem;
+        padding-top: 2rem;
+        border-top: 1px solid var(--border);
+      }
+
+      .library-end > p {
+        max-width: 35rem;
+        font-size: 1.125rem;
+      }
+
+      .library-search-dialog {
+        width: min(36rem, calc(100% - 2rem));
+        padding: 1rem;
+      }
+
+      .library-search-dialog header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .library-search-dialog header button {
+        padding: 0.3rem 0.65rem;
+        font-size: 1.3rem;
+        cursor: pointer;
+      }
+
+      .library-search-dialog input {
+        width: 100%;
+        min-height: 2.75rem;
+        margin: 0.75rem 0 0.5rem;
+        padding: 0.5rem 0.7rem;
+        border: 1px solid var(--input);
+        border-radius: var(--radius-md);
+        background: var(--card);
+      }
+
+      .library-search-dialog input::placeholder {
+        color: var(--foreground-lighter);
+        opacity: 1;
+      }
+
+      .library-search-dialog ul {
+        max-height: 48dvh;
+        overflow: auto;
+      }
+
+      .library-search-dialog li a {
+        display: block;
+        padding: 0.6rem;
+        border-radius: var(--radius-md);
+      }
+
+      .library-search-dialog li a:is(:focus-visible, :hover) {
+        background: var(--background-overlay-hover);
+      }
+
+      .library-search-dialog li small {
+        display: block;
+        color: var(--foreground-light);
+      }
+
+      @media (pointer: coarse) {
+        .library-filters {
+          row-gap: 0;
+        }
+        .library-filters button {
+          min-height: 2rem;
+        }
+      }
+
+      @media (max-width: 39.999rem) {
+        .library-filters {
+          width: min(100%, 21rem);
+        }
+      }
+
+      @media (min-width: 40rem) {
+        .library-filters {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .library-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (min-width: 48rem) {
+        .library-hero {
+          padding-block: 5.4rem 2.15rem;
+        }
+
+        .library-preview .preview-fade {
+          mask-image: linear-gradient(black calc(100% - 1.5rem), transparent);
+        }
+
+        .library-preview .preview-padding {
+          padding: 1.5rem;
+        }
+      }
+
+      @media (min-width: 64rem) {
+        .library-grid {
+          grid-template-columns: repeat(4, minmax(0, 1fr));
+        }
+      }
+    
